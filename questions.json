@@ -1,62 +1,57 @@
- [ 
-    {
-        "id": "0",
-        "question": "What is the capital of Australia?",
-        "options": ["Sydney", "Canberra", "Melbourne", "Brisbane"],
-        "correct": "Canberra"
-    },
-    {
-        "id": "1",
-        "question": "Which planet is known as the Red Planet?",
-        "options": ["Earth", "Mars", "Jupiter", "Venus"],
-        "correct": "Mars"
-    },
-    {
-        "id": "2",
-        "question": "What is the largest mammal in the world?",
-        "options": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
-        "correct": "Blue Whale"
-    },
+[
     {
         "id": "3",
-        "question": "Who painted the Mona Lisa?",
-        "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
-        "correct": "Leonardo da Vinci"
+        "question": "What is the powerhouse of the cell?",
+        "options": [
+            "Nucleus",
+            "Ribosome",
+            "Mitochondria",
+            "Golgi apparatus"
+        ],
+        "correct": "Mitochondria"
     },
     {
         "id": "4",
-        "question": "What is the chemical symbol for water?",
-        "options": ["H2O", "O2", "CO2", "HO2"],
-        "correct": "H2O"
+        "question": "What is the largest ocean on Earth?",
+        "options": [
+            "Atlantic Ocean",
+            "Indian Ocean",
+            "Pacific Ocean",
+            "Arctic Ocean"
+        ],
+        "correct": "Pacific Ocean"
     },
     {
-        "id": "5",
-        "question": "Which is the smallest country in the world?",
-        "options": ["Monaco", "Vatican City", "San Marino", "Liechtenstein"],
-        "correct": "Vatican City"
+        "id": "2",
+        "question": "Who painted the ceiling of the Sistine Chapel?",
+        "options": [
+            "Leonardo da Vinci",
+            "Michelangelo",
+            "Raphael",
+            "Donatello"
+        ],
+        "correct": "Michelangelo"
     },
     {
-        "id": "6",
-        "question": "What is the square root of 64?",
-        "options": ["6", "8", "10", "12"],
-        "correct": "8"
+        "id": "1",
+        "question": "What is 5 + 7?",
+        "options": [
+            "10",
+            "12",
+            "15",
+            "17"
+        ],
+        "correct": "12"
     },
     {
-        "id": "7",
-        "question": "Which language is most widely spoken in the world?",
-        "options": ["Spanish", "English", "Mandarin Chinese", "Hindi"],
-        "correct": "Mandarin Chinese"
-    },
-    {
-        "id": "8",
-        "question": "In which year did the Titanic sink?",
-        "options": ["1905", "1912", "1915", "1920"],
-        "correct": "1912"
-    },
-    {
-        "id": "9",
-        "question": "What is the speed of light?",
-        "options": ["300,000 km/s", "150,000 km/s", "450,000 km/s", "600,000 km/s"],
-        "correct": "300,000 km/s"
+        "id": "0",
+        "question": "What is the capital of France?",
+        "options": [
+            "Berlin",
+            "Madrid",
+            "Paris",
+            "Lisbon"
+        ],
+        "correct": "Paris"
     }
 ]
