@@ -1,57 +1,35 @@
 [
     {
-        "id": "3",
-        "question": "What is the powerhouse of the cell?",
+        "id": "0",
+        "question": "In a group of 10 people, 9 like Physics, 3 like Maths, and 2 like both. How many people like Physics only?",
         "options": [
-            "Nucleus",
-            "Ribosome",
-            "Mitochondria",
-            "Golgi apparatus"
+            9,
+            7,
+            9,
+            5
         ],
-        "correct": "Mitochondria"
-    },
-    {
-        "id": "4",
-        "question": "What is the largest ocean on Earth?",
-        "options": [
-            "Atlantic Ocean",
-            "Indian Ocean",
-            "Pacific Ocean",
-            "Arctic Ocean"
-        ],
-        "correct": "Pacific Ocean"
-    },
-    {
-        "id": "2",
-        "question": "Who painted the ceiling of the Sistine Chapel?",
-        "options": [
-            "Leonardo da Vinci",
-            "Michelangelo",
-            "Raphael",
-            "Donatello"
-        ],
-        "correct": "Michelangelo"
+        "correct": 7
     },
     {
         "id": "1",
-        "question": "What is 5 + 7?",
+        "question": "The initial value was 6.7 and the new value is 4.9. What is the percentage change?",
         "options": [
-            "10",
-            "12",
-            "15",
-            "17"
+            -23.8,
+            -26.9,
+            -28.1,
+            -19.8
         ],
-        "correct": "12"
+        "correct": -26.9
     },
     {
-        "id": "0",
-        "question": "What is the capital of France?",
+        "id": "2",
+        "question": "The initial price was 2, and the new price is 7. What is the percentage change?",
         "options": [
-            "Berlin",
-            "Madrid",
-            "Paris",
-            "Lisbon"
+            252.2,
+            250.0,
+            259.2,
+            247.3
         ],
-        "correct": "Paris"
+        "correct": 250.0
     }
 ]
