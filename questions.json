@@ -1,35 +1,35 @@
 [
     {
         "id": "0",
-        "question": "In a group of 10 people, 8 like Physics, 10 like Maths, and 8 like both. How many people like Physics only?",
+        "question": "In a group of 10 people, 2 like Physics, 9 like Maths, and 1 like both. How many people like Physics only?",
         "options": [
-            3,
-            -2,
             0,
-            2
+            1,
+            2,
+            3
         ],
-        "correct": 0
+        "correct": 1
     },
     {
         "id": "1",
-        "question": "The initial value was 5.9 and the new value is 7.4. What is the percentage change?",
+        "question": "The initial value was 7.1 and the new value is 3.0. What is the percentage change?",
         "options": [
-            35.0,
-            27.3,
-            25.4,
-            20.8
+            -48.5,
+            -60.2,
+            -53.7,
+            -57.7
         ],
-        "correct": 25.4
+        "correct": -57.7
     },
     {
         "id": "2",
-        "question": "The initial price was 2, and the new price is 2. What is the percentage change?",
+        "question": "The initial price was 1, and the new price is 18. What is the percentage change?",
         "options": [
-            1.2,
-            0.0,
-            -2.9,
-            8.3
+            1704.0,
+            1706.9,
+            1697.7,
+            1700.0
         ],
-        "correct": 0.0
+        "correct": 1700.0
     }
 ]
