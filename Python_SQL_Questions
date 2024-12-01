@@ -1,31 +1,7 @@
 [
   {
     "id": "1",
-    "question": "What is the Python equivalent of the SQL SELECT statement for retrieving all columns?",
-    "options": [
-      "Python: `df.loc[:, :]`",
-      "Python: `df[['column1', 'column2']]`",
-      "Python: `df.head()`",
-      "Python: `df.loc['row1', :]`"
-    ],
-    "correct": "Python: `df.loc[:, :]`",
-    "explanation": "The SQL statement `SELECT * FROM table` retrieves all columns from a table, which is equivalent to using `df.loc[:, :]` in Python to select all columns of a DataFrame."
-  },
-  {
-    "id": "2",
-    "question": "What is the SQL equivalent of the Python statement `df['column1'].mean()`?",
-    "options": [
-      "SQL: `SELECT AVG(column1) FROM table`",
-      "SQL: `SELECT SUM(column1) FROM table`",
-      "SQL: `SELECT COUNT(column1) FROM table`",
-      "SQL: `SELECT MAX(column1) FROM table`"
-    ],
-    "correct": "SQL: `SELECT AVG(column1) FROM table`",
-    "explanation": "In Python, `df['column1'].mean()` calculates the average of column1. The SQL equivalent is `SELECT AVG(column1) FROM table`."
-  },
-  {
-    "id": "3",
-    "question": "What is the Python equivalent of the SQL WHERE clause?",
+    "question": "If the SQL query `SELECT * FROM table WHERE column > 10` retrieves all rows where `column` is greater than 10, what is the Python equivalent?",
     "options": [
       "Python: `df[df['column'] > 10]`",
       "Python: `df.head(10)`",
@@ -33,114 +9,138 @@
       "Python: `df[['column1', 'column2']]`"
     ],
     "correct": "Python: `df[df['column'] > 10]`",
-    "explanation": "In SQL, the WHERE clause filters rows based on a condition (e.g., `WHERE column > 10`). In Python, this is done using boolean indexing, such as `df[df['column'] > 10]`."
+    "explanation": "In SQL, `SELECT * FROM table WHERE column > 10` retrieves all rows where the value in `column` is greater than 10. The equivalent Python operation is boolean indexing with `df[df['column'] > 10]`."
+  },
+  {
+    "id": "2",
+    "question": "If the SQL query `SELECT column1, column2 FROM table` retrieves two specific columns, `column1` and `column2`, what is the Python equivalent?",
+    "options": [
+      "Python: `df[['column1', 'column2']]`",
+      "Python: `df['column1', 'column2']`",
+      "Python: `df.loc[:, ['column1', 'column2']]`",
+      "Python: `df.iloc[:, ['column1', 'column2']]`"
+    ],
+    "correct": "Python: `df[['column1', 'column2']]`",
+    "explanation": "In SQL, `SELECT column1, column2 FROM table` retrieves only the specified columns. The Python equivalent is `df[['column1', 'column2']]`."
+  },
+  {
+    "id": "3",
+    "question": "If the SQL query `SELECT * FROM table LIMIT 10` retrieves the first 10 rows of a table, what is the Python equivalent?",
+    "options": [
+      "Python: `df.head(10)`",
+      "Python: `df.tail(10)`",
+      "Python: `df[:10]`",
+      "Python: `df.iloc[:10, :]`"
+    ],
+    "correct": "Python: `df.head(10)`",
+    "explanation": "In SQL, `SELECT * FROM table LIMIT 10` retrieves the first 10 rows. The Python equivalent is `df.head(10)`."
   },
   {
     "id": "4",
-    "question": "What is the SQL equivalent of the Python statement `df['column1'].sum()`?",
+    "question": "If the SQL query `SELECT COUNT(*) FROM table` returns the total number of rows in the table, what is the Python equivalent?",
     "options": [
-      "SQL: `SELECT SUM(column1) FROM table`",
-      "SQL: `SELECT AVG(column1) FROM table`",
-      "SQL: `SELECT COUNT(column1) FROM table`",
-      "SQL: `SELECT MIN(column1) FROM table`"
+      "Python: `len(df)`",
+      "Python: `df.count()`",
+      "Python: `df.shape[0]`",
+      "Python: `df.size`"
     ],
-    "correct": "SQL: `SELECT SUM(column1) FROM table`",
-    "explanation": "The Python statement `df['column1'].sum()` computes the sum of column1, equivalent to `SELECT SUM(column1) FROM table` in SQL."
+    "correct": "Python: `df.shape[0]`",
+    "explanation": "In SQL, `SELECT COUNT(*) FROM table` counts the rows in the table. The Python equivalent is `df.shape[0]`, which gives the number of rows in a DataFrame."
   },
   {
     "id": "5",
-    "question": "How do you retrieve the top 10 rows in SQL and Python?",
+    "question": "If the SQL query `SELECT DISTINCT column FROM table` retrieves unique values in `column`, what is the Python equivalent?",
     "options": [
-      "Python: `df.head(10)`; SQL: `SELECT * FROM table LIMIT 10`",
-      "Python: `df.tail(10)`; SQL: `SELECT * FROM table ORDER BY DESC LIMIT 10`",
-      "Python: `df[0:10]`; SQL: `SELECT TOP 10 * FROM table`",
-      "Python: `df.iloc[10]`; SQL: `SELECT LIMIT 10 * FROM table`"
+      "Python: `df['column'].unique()`",
+      "Python: `df.drop_duplicates('column')`",
+      "Python: `df['column'].value_counts()`",
+      "Python: `df.sort_values('column')`"
     ],
-    "correct": "Python: `df.head(10)`; SQL: `SELECT * FROM table LIMIT 10`",
-    "explanation": "The Python method `df.head(10)` retrieves the first 10 rows of a DataFrame. The SQL equivalent is `SELECT * FROM table LIMIT 10`."
+    "correct": "Python: `df['column'].unique()`",
+    "explanation": "In SQL, `SELECT DISTINCT column FROM table` retrieves all unique values in the specified column. The Python equivalent is `df['column'].unique()`."
   },
   {
     "id": "6",
-    "question": "What is the Python equivalent of the SQL DISTINCT keyword?",
+    "question": "If the SQL query `SELECT SUM(column) FROM table` computes the sum of all values in `column`, what is the Python equivalent?",
     "options": [
-      "Python: `df['column'].unique()`",
-      "Python: `df.drop_duplicates()`",
-      "Python: `df.value_counts()`",
-      "Python: `df.sort_values()`"
+      "Python: `df['column'].sum()`",
+      "Python: `df['column'].count()`",
+      "Python: `df['column'].mean()`",
+      "Python: `df['column'].max()`"
     ],
-    "correct": "Python: `df['column'].unique()`",
-    "explanation": "The SQL `DISTINCT` keyword retrieves unique values in a column, equivalent to `df['column'].unique()` in Python."
+    "correct": "Python: `df['column'].sum()`",
+    "explanation": "In SQL, `SELECT SUM(column) FROM table` computes the total sum of the column's values. The Python equivalent is `df['column'].sum()`."
   },
   {
     "id": "7",
-    "question": "What is the SQL equivalent of the Python statement `df.groupby('column')['value'].mean()`?",
+    "question": "If the SQL query `SELECT column, AVG(value) FROM table GROUP BY column` calculates the average `value` for each `column`, what is the Python equivalent?",
     "options": [
-      "SQL: `SELECT column, AVG(value) FROM table GROUP BY column`",
-      "SQL: `SELECT column, MAX(value) FROM table GROUP BY column`",
-      "SQL: `SELECT column, SUM(value) FROM table`",
-      "SQL: `SELECT column FROM table GROUP BY column`"
+      "Python: `df.groupby('column')['value'].mean()`",
+      "Python: `df['value'].groupby('column').mean()`",
+      "Python: `df.groupby('value')['column'].mean()`",
+      "Python: `df['value'].mean()`"
     ],
-    "correct": "SQL: `SELECT column, AVG(value) FROM table GROUP BY column`",
-    "explanation": "The Python statement `df.groupby('column')['value'].mean()` calculates the average of 'value' grouped by 'column'. The SQL equivalent is `SELECT column, AVG(value) FROM table GROUP BY column`."
+    "correct": "Python: `df.groupby('column')['value'].mean()`",
+    "explanation": "In SQL, `SELECT column, AVG(value) FROM table GROUP BY column` calculates averages per group. The Python equivalent is `df.groupby('column')['value'].mean()`."
   },
   {
     "id": "8",
-    "question": "What is the Python equivalent of the SQL INNER JOIN?",
+    "question": "If the SQL query `SELECT * FROM table1 INNER JOIN table2 ON table1.key = table2.key` performs an inner join, what is the Python equivalent?",
     "options": [
       "Python: `pd.merge(df1, df2, on='key')`",
       "Python: `df1.join(df2, how='inner')`",
-      "Python: `df1.append(df2)`",
-      "Python: `df1.concat(df2)`"
+      "Python: `pd.concat([df1, df2], axis=1)`",
+      "Python: `df1.append(df2)`"
     ],
     "correct": "Python: `pd.merge(df1, df2, on='key')`",
-    "explanation": "The SQL `INNER JOIN` combines rows from two tables based on a common key. In Python, this is done with `pd.merge(df1, df2, on='key')`."
+    "explanation": "In SQL, `INNER JOIN` combines two tables based on a common key. The Python equivalent is `pd.merge(df1, df2, on='key')`."
   },
   {
     "id": "9",
-    "question": "What is the SQL equivalent of the Python method `df.isnull().sum()`?",
+    "question": "If the SQL query `DELETE FROM table WHERE column IS NULL` removes rows with null values in `column`, what is the Python equivalent?",
     "options": [
-      "SQL: `SELECT COUNT(*) FROM table WHERE column IS NULL`",
-      "SQL: `SELECT COUNT(column) FROM table WHERE column IS NOT NULL`",
-      "SQL: `SELECT * FROM table WHERE column IS NULL`",
-      "SQL: `SELECT DISTINCT(column) FROM table WHERE column IS NULL`"
+      "Python: `df.dropna(subset=['column'])`",
+      "Python: `df = df[df['column'].notnull()]`",
+      "Python: `df['column'].fillna(0)`",
+      "Python: `df['column'].replace(np.nan, 0)`"
     ],
-    "correct": "SQL: `SELECT COUNT(*) FROM table WHERE column IS NULL`",
-    "explanation": "The Python method `df.isnull().sum()` counts the number of null values in a column. The SQL equivalent is `SELECT COUNT(*) FROM table WHERE column IS NULL`."
+    "correct": "Python: `df.dropna(subset=['column'])`",
+    "explanation": "In SQL, `DELETE FROM table WHERE column IS NULL` removes rows with null values in `column`. The Python equivalent is `df.dropna(subset=['column'])`."
   },
   {
     "id": "10",
-    "question": "What is the Python equivalent of the SQL COUNT function?",
+    "question": "If the SQL query `ALTER TABLE table DROP COLUMN column` removes a column, what is the Python equivalent?",
     "options": [
-      "Python: `df['column'].count()`",
-      "Python: `df['column'].sum()`",
-      "Python: `len(df['column'])`",
-      "Python: `df['column'].size`"
+      "Python: `df.drop('column', axis=1, inplace=True)`",
+      "Python: `df['column'] = None`",
+      "Python: `df['column'] = np.nan`",
+      "Python: `del df['column']`"
     ],
-    "correct": "Python: `df['column'].count()`",
-    "explanation": "The SQL `COUNT(column)` function counts the non-null entries in a column. The Python equivalent is `df['column'].count()`."
+    "correct": "Python: `df.drop('column', axis=1, inplace=True)`",
+    "explanation": "In SQL, `ALTER TABLE table DROP COLUMN column` deletes a column. The Python equivalent is `df.drop('column', axis=1, inplace=True)`."
   },
   {
     "id": "11",
-    "question": "How do you concatenate rows in Python and SQL?",
+    "question": "If the SQL query `SELECT column1 || column2 AS combined FROM table` concatenates two columns, what is the Python equivalent?",
     "options": [
-      "Python: `pd.concat([df1, df2])`; SQL: `SELECT * FROM table1 UNION SELECT * FROM table2`",
-      "Python: `df1.append(df2)`; SQL: `SELECT * FROM table1 INTERSECT SELECT * FROM table2`",
-      "Python: `df1.join(df2)`; SQL: `SELECT * FROM table1 JOIN table2`",
-      "Python: `df1.merge(df2)`; SQL: `SELECT * FROM table1 LEFT JOIN table2`"
+      "Python: `df['combined'] = df['column1'] + df['column2']`",
+      "Python: `df['combined'] = df['column1'].str.cat(df['column2'])`",
+      "Python: `df['combined'] = df[['column1', 'column2']].apply(lambda x: ''.join(x), axis=1)`",
+      "Python: `df['combined'] = df['column1'] * df['column2']`"
     ],
-    "correct": "Python: `pd.concat([df1, df2])`; SQL: `SELECT * FROM table1 UNION SELECT * FROM table2`",
-    "explanation": "To concatenate rows, Python uses `pd.concat([df1, df2])`. In SQL, the equivalent is `SELECT * FROM table1 UNION SELECT * FROM table2`."
+    "correct": "Python: `df['combined'] = df['column1'] + df['column2']`",
+    "explanation": "In SQL, `SELECT column1 || column2 AS combined FROM table` concatenates two columns. The Python equivalent is `df['combined'] = df['column1'] + df['column2']`."
   },
   {
     "id": "12",
-    "question": "What is the SQL equivalent of the Python `df.drop('column', axis=1)` statement?",
+    "question": "If the SQL query `UPDATE table SET column = column * 2` doubles the values in a column, what is the Python equivalent?",
     "options": [
-      "SQL: `ALTER TABLE table DROP COLUMN column`",
-      "SQL: `DELETE FROM table WHERE column IS NOT NULL`",
-      "SQL: `UPDATE table SET column = NULL`",
-      "SQL: `SELECT * FROM table WHERE column IS NOT NULL`"
+      "Python: `df['column'] = df['column'] * 2`",
+      "Python: `df['column'] = df['column'] / 2`",
+      "Python: `df['column'] = df['column'] + 2`",
+      "Python: `df['column'] = df['column'] - 2`"
     ],
-    "correct": "SQL: `ALTER TABLE table DROP COLUMN column`",
-    "explanation": "The Python statement `df.drop('column', axis=1)` removes a column from the DataFrame. The SQL equivalent is `ALTER TABLE table DROP COLUMN column`."
+    "correct": "Python: `df['column'] = df['column'] * 2`",
+    "explanation": "In SQL, `UPDATE table SET column = column * 2` multiplies the column values by 2. The Python equivalent is `df['column'] = df['column'] * 2`."
   }
 ]
