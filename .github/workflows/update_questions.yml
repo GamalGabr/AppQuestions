@@ -2,7 +2,7 @@ name: Update Questions Daily
 
 on:
   schedule:
-    - cron: "49 20 * * *"  # Runs every day at 18:30 UTC
+    - cron: "56 17 * * *"  # Runs every day at 18:30 UTC
 
 jobs:
   update-questions:
