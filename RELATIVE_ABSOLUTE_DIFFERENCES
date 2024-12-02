@@ -106,5 +106,17 @@
     ],
     "correct": "Absolute increase is a subtraction and measures the direct change. Relative percentage increase is a ratio and measures the proportional change compared to the original probability.",
     "explanation": "Absolute increase is calculated using subtraction, and relative percentage increase uses a ratio to compare the change to the original value."
+  },
+  {
+    "id": "10",
+    "question": "Pickleball had 10 players and grew to 20 players, while football had 100 players and grew to 150 players. What are the absolute and relative percentage increases for both sports, and which had the largest absolute increase and the fastest relative percentage increase?",
+    "options": [
+      "Pickleball: Absolute increase = 10, Relative increase = 100%. Football: Absolute increase = 50, Relative increase = 50%. Football had the largest absolute increase and Pickleball had the fastest relative increase.",
+      "Pickleball: Absolute increase = 10, Relative increase = 50%. Football: Absolute increase = 50, Relative increase = 100%. Football had the largest absolute increase and Pickleball had the fastest relative increase.",
+      "Pickleball: Absolute increase = 50, Relative increase = 50%. Football: Absolute increase = 10, Relative increase = 100%. Pickleball had the largest absolute increase and the fastest relative increase.",
+      "Pickleball: Absolute increase = 20, Relative increase = 100%. Football: Absolute increase = 150, Relative increase = 50%. Football had the largest absolute increase and Pickleball had the fastest relative increase."
+    ],
+    "correct": "Pickleball: Absolute increase = 10, Relative increase = 100%. Football: Absolute increase = 50, Relative increase = 50%. Football had the largest absolute increase and Pickleball had the fastest relative increase.",
+    "explanation": "Pickleball grew from 10 to 20 players, with an absolute increase of 10 players (20 - 10) and a relative percentage increase of 100% ((10 / 10) × 100). Football grew from 100 to 150 players, with an absolute increase of 50 players (150 - 100) and a relative percentage increase of 50% ((50 / 100) × 100). Football had the larger absolute increase, but Pickleball's smaller base resulted in a faster relative increase."
   }
 ]
