@@ -1,0 +1,112 @@
+[
+    {
+        "id": "101",
+        "question": "What is the probability of rolling a fair die 4 times and having no duplicate rolls?",
+        "options": [
+            "16.67%",
+            "27.78%",
+            "33.33%",
+            "50.00%"
+        ],
+        "correct": "27.78%"
+    },
+    {
+        "id": "102",
+        "question": "In a marble bag with 2 green marbles and 2 red marbles, both green marbles are outside the bag, and both red marbles remain inside the bag. What is the probability of this happening if the selection is random and independent?",
+        "options": [
+            "50.00%",
+            "25.00%",
+            "16.67%",
+            "33.33%"
+        ],
+        "correct": "16.67%"
+    },
+    {
+        "id": "103",
+        "question": "If the original value is 1 and it increases to 5, what is the percentage increase?",
+        "options": [
+            "400%",
+            "300%",
+            "500%",
+            "600%"
+        ],
+        "correct": "400%"
+    },
+    {
+        "id": "104",
+        "question": "If the original value is 6 and it decreases to 3, what is the percentage decrease?",
+        "options": [
+            "30%",
+            "40%",
+            "50%",
+            "60%"
+        ],
+        "correct": "50%"
+    },
+    {
+        "id": "105",
+        "question": "If the original value is 4 and the percentage increase is 150%, what is the new value?",
+        "options": [
+            "6",
+            "8",
+            "10",
+            "12"
+        ],
+        "correct": "10"
+    },
+    {
+        "id": "106",
+        "question": "If the new value is 8 and the percentage increase is 100%, what was the original value?",
+        "options": [
+            "2",
+            "4",
+            "6",
+            "8"
+        ],
+        "correct": "4"
+    },
+    {
+        "id": "107",
+        "question": "The date is 26th of November (Tuesday). What will the date be in 9 days?",
+        "options": [
+            "5th of December (Thursday)",
+            "4th of December (Wednesday)",
+            "3rd of December (Tuesday)",
+            "6th of December (Friday)"
+        ],
+        "correct": "5th of December (Thursday)"
+    },
+    {
+        "id": "108",
+        "question": "The date is 5th of August (Monday). What was the day and date 12 days ago?",
+        "options": [
+            "24th of July (Wednesday)",
+            "25th of July (Thursday)",
+            "23rd of July (Tuesday)",
+            "22nd of July (Monday)"
+        ],
+        "correct": "24th of July (Wednesday)"
+    },
+    {
+        "id": "109",
+        "question": "There are 2 men and 3 women in a group. How many committees of 1 man and 2 women can be formed?",
+        "options": [
+            "3",
+            "6",
+            "9",
+            "12"
+        ],
+        "correct": "6"
+    },
+    {
+        "id": "110",
+        "question": "Suppose fewer people who took a training course qualified for the Highland Games than those who did not take the course. Does this mean the training program is ineffective? Consider this:\n- 10 people who took the course qualified out of 20 participants (50%).\n- 30 people who did not take the course qualified out of 150 participants (20%).\nWhat conclusion can be drawn?",
+        "options": [
+            "Yes, the training program is ineffective because fewer people qualified.",
+            "No, the training program is effective because the base qualification rate is much higher for participants (50%) than non-participants (20%).",
+            "No conclusion can be drawn without more data.",
+            "The effectiveness of the training program depends on other factors."
+        ],
+        "correct": "No, the training program is effective because the base qualification rate is much higher for participants (50%) than non-participants (20%)."
+    }
+]
