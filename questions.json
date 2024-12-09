@@ -1,112 +1,112 @@
 [
     {
-        "id": "26",
-        "question": "In a group of 10 people, 9 like Physics, 10 like Maths, and 9 like both. How many people like Physics only?",
+        "id": "39",
+        "question": "In a group of 10 people, 7 like Physics, 10 like Maths, and 7 like both. How many people like Physics only?",
         "options": [
+            3,
+            1,
             0,
-            6,
-            7,
-            2
+            8
         ],
         "correct": 0
     },
     {
-        "id": "6",
-        "question": "In a group of 10 people, 8 like Physics, 7 like Maths, and 5 like both. How many people like Physics only?",
+        "id": "14",
+        "question": "In a group of 10 people, 3 like Physics, 8 like Maths, and 1 like both. How many people like Physics only?",
         "options": [
             5,
-            3,
+            2,
             1,
+            9
+        ],
+        "correct": 2
+    },
+    {
+        "id": "60",
+        "question": "In a group of 10 people, 9 like Physics, 7 like Maths, and 6 like both. How many people like Physics only?",
+        "options": [
+            6,
+            9,
+            7,
             3
         ],
         "correct": 3
     },
     {
-        "id": "31",
-        "question": "In a group of 10 people, 10 like Physics, 4 like Maths, and 4 like both. How many people like Physics only?",
+        "id": "12",
+        "question": "In a group of 10 people, 9 like Physics, 3 like Maths, and 2 like both. How many people like Physics only?",
         "options": [
-            5,
-            10,
-            6,
-            1
-        ],
-        "correct": 6
-    },
-    {
-        "id": "85",
-        "question": "In a group of 10 people, 9 like Physics, 6 like Maths, and 5 like both. How many people like Physics only?",
-        "options": [
-            10,
             4,
             8,
-            2
+            7,
+            1
         ],
-        "correct": 4
+        "correct": 7
     },
     {
-        "id": "47",
-        "question": "The initial value was 6, and the new value is 4. What is the percentage change?",
+        "id": "31",
+        "question": "The initial value was 6, and the new value is 10. What is the percentage change?",
         "options": [
-            -25.0,
-            -33.0,
-            -29.0,
-            -35.0
+            67.0,
+            68.0,
+            66.0,
+            75.0
         ],
-        "correct": -33.0
+        "correct": 67.0
     },
     {
-        "id": "75",
-        "question": "The initial value was 7, and the new value is 7. What is the percentage change?",
-        "options": [
-            3.0,
-            0.0,
-            9.0,
-            -3.0
-        ],
-        "correct": 0.0
-    },
-    {
-        "id": "30",
-        "question": "The initial value was 4, and the new value is 6. What is the percentage change?",
+        "id": "14",
+        "question": "The initial value was 2, and the new value is 3. What is the percentage change?",
         "options": [
             50.0,
-            45.0,
-            60.0,
-            54.0
+            58.0,
+            53.0,
+            45.0
         ],
         "correct": 50.0
     },
     {
-        "id": "47",
+        "id": "14",
+        "question": "The initial value was 10, and the new value is 3. What is the percentage change?",
+        "options": [
+            -67.0,
+            -70.0,
+            -62.0,
+            -75.0
+        ],
+        "correct": -70.0
+    },
+    {
+        "id": "70",
         "question": "An athlete's chances of qualifying for the Highland Games changed from 1% to 1%. What is the absolute percentage change and the relative percentage change?",
         "options": [
-            "Absolute: -1%, Relative: -6.0%",
-            "Absolute: 2%, Relative: 16.0%",
-            "Absolute: 2%, Relative: 16.0%",
-            "Absolute: 0%, Relative: 0.0%"
+            "Absolute: -2%, Relative: -6.0%",
+            "Absolute: 3%, Relative: 19.0%",
+            "Absolute: 0%, Relative: 0.0%",
+            "Absolute: 2%, Relative: 26.0%"
         ],
         "correct": "Absolute: 0%, Relative: 0.0%"
     },
     {
-        "id": "72",
-        "question": "An athlete's chances of qualifying for the Highland Games changed from 7% to 12%. What is the absolute percentage change and the relative percentage change?",
+        "id": "40",
+        "question": "An athlete's chances of qualifying for the Highland Games changed from 7% to 4%. What is the absolute percentage change and the relative percentage change?",
         "options": [
-            "Absolute: 4%, Relative: 63.0%",
-            "Absolute: 7%, Relative: 101.0%",
-            "Absolute: 8%, Relative: 81.0%",
-            "Absolute: 5%, Relative: 71.0%"
+            "Absolute: 3%, Relative: 43.0%",
+            "Absolute: 2%, Relative: 34.0%",
+            "Absolute: 6%, Relative: 65.0%",
+            "Absolute: 6%, Relative: 61.0%"
         ],
-        "correct": "Absolute: 5%, Relative: 71.0%"
+        "correct": "Absolute: 3%, Relative: 43.0%"
     },
     {
-        "id": "9",
-        "question": "The initial price was 5, and the new price is 7. What is the percentage change?",
+        "id": "19",
+        "question": "The initial price was 4, and the new price is 6. What is the percentage change?",
         "options": [
             45.0,
-            40.0,
-            38.0,
-            42.0
+            50.0,
+            55.0,
+            53.0
         ],
-        "correct": 40.0
+        "correct": 50.0
     }
 ]
