@@ -3,6 +3,7 @@ name: Update Questions Daily
 on:
   schedule:
     - cron: "56 17 * * *"  # Runs daily at 17:56 UTC
+  workflow_dispatch:         # Enable manual triggering
 
 jobs:
   update-questions:
@@ -10,34 +11,35 @@ jobs:
 
     steps:
     # Step 1: Checkout the source repository
-    - name: Checkout Repository
+    - name: Checkout Source Repository
       uses: actions/checkout@v3
 
-    # Step 2: Set up Python and run the script
+    # Step 2: Set up Python and install dependencies
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: "3.x"
 
-    - name: Install Dependencies
+    - name: Install Python Dependencies
       run: python -m pip install --upgrade pip
 
+    # Step 3: Run the script to update questions
     - name: Update Questions
       run: python update_questions.py
 
-    # Step 3: Checkout the target repository
+    # Step 4: Checkout the target repository
     - name: Checkout Target Repository
       uses: actions/checkout@v3
       with:
-        repository: your-username/Target-Questions-Repo  # Replace with your target repo name
-        token: ${{ secrets.TARGET_REPO_TOKEN }}
-        ref: main  # Replace with the branch you want to push to
+        repository: target-username/target-repository  # Replace with your target repo details
+        token: ${{ secrets.TARGET_REPO_TOKEN }}       # Token for authentication
+        ref: main                                     # Branch to push to
 
-    # Step 4: Copy the updated file to the target repository
+    # Step 5: Copy the updated file to the target repository
     - name: Copy Updated Questions
       run: cp questions.json ./  # Copy the updated file to the target repo's directory
 
-    # Step 5: Commit and push the updated file to the target repository
+    # Step 6: Commit and push to the target repository
     - name: Commit and Push to Target Repository
       run: |
         git config --global user.name "github-actions[bot]"
