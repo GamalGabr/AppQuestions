@@ -23,27 +23,35 @@ jobs:
     - name: Install Python Dependencies
       run: python -m pip install --upgrade pip
 
-    # Step 3: Run the script to update questions
+    # Step 3: Configure Git User
+    - name: Configure Git User
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+    # Step 4: Run the script to update questions
     - name: Update Questions
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: python update_questions.py
 
-    # Step 4: Checkout the target repository
+    # Step 5: Checkout the target repository
     - name: Checkout Target Repository
       uses: actions/checkout@v3
       with:
         repository: GamalGabr/Target-Questions-Repo  # Replace with your target repo details
-        token: ${{ secrets.TARGET_REPO_TOKEN }}       # Token for authentication
-        ref: main                                     # Branch to push to
+        token: ${{ secrets.GITHUB_TOKEN }}           # Use the built-in GITHUB_TOKEN
+        ref: main                                    # Branch to push to
 
-    # Step 5: Copy the updated file to the target repository
+    # Step 6: Copy the updated file to the target repository
     - name: Copy Updated Questions
       run: cp questions.json ./  # Copy the updated file to the target repo's directory
 
-    # Step 6: Commit and push to the target repository
+    # Step 7: Commit and push to the target repository
     - name: Commit and Push to Target Repository
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add questions.json
         git commit -m "Daily update of questions [$(date)]" || echo "No changes to commit"
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
