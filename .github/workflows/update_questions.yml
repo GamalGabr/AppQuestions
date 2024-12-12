@@ -32,5 +32,5 @@ jobs:
     # Step 4: Run the script to update questions
     - name: Update Questions
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TARGET_REPO_TOKEN: ${{ secrets.TARGET_REPO_TOKEN }}
       run: python update_questions.py
