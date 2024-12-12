@@ -117,12 +117,17 @@ def update_questions_file():
         json.dump(questions, file, indent=4)
     print(f"questions.json updated successfully in {LOCAL_TARGET_REPO_PATH}")
 
-    # Step 4: Commit and Push Changes to Target Repository
+    # Step 4: Set Git User Identity
     os.chdir(LOCAL_TARGET_REPO_PATH)  # Change to target repo directory
+    subprocess.run(["git", "config", "--global", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
+    subprocess.run(["git", "config", "--global", "user.name", "github-actions[bot]"], check=True)
+
+    # Step 5: Commit and Push Changes to Target Repository
     subprocess.run(["git", "add", "questions.json"], check=True)
     subprocess.run(["git", "commit", "-m", "Update questions.json with new questions"], check=True)
     subprocess.run(["git", "push", "origin", BRANCH_NAME], check=True)
     print("Changes pushed to target repository.")
+
 
 if __name__ == "__main__":
     update_questions_file()
