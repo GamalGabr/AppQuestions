@@ -76,18 +76,40 @@ def generate_percentage_question():
 
 # Generate a new type of question about machine efficiency
 def generate_machine_efficiency_question():
+    # Generate random initial values
+    num_machines = random.randint(2, 10)  # Number of machines
+    time_per_set = random.randint(1, 10)  # Time in minutes for one set of output
+    crackers_per_set = random.randint(5, 20)  # Crackers made in one set
+
+    # Scale up the problem
+    scaled_machines = num_machines * 10
+    scaled_crackers = crackers_per_set * random.randint(2, 5)  # Random scaling factor for crackers
+
+    # Calculate the correct time based on scaled crackers and machines
+    time_for_scaled_crackers = (time_per_set * scaled_crackers) / (scaled_machines * crackers_per_set / num_machines)
+
+    # Format the question text
+    question_text = (
+        f"If it takes {num_machines} machines {time_per_set} minutes to make {crackers_per_set} crackers, "
+        f"how long would it take {scaled_machines} machines to make {scaled_crackers} crackers?"
+    )
+
+    # Create plausible options
+    correct_time = round(time_for_scaled_crackers, 2)
     question = {
         "id": f"{random.randint(0, 100)}",
-        "question": "If it takes 5 machines 5 minutes to make 5 crackers, how long would it take 100 machines to make 100 crackers?",
+        "question": question_text,
         "options": [
-            "1 minute",
-            "5 minutes",
-            "10 minutes",
-            "15 minutes",
-            "100 minutes"
+            f"{correct_time} minutes",
+            f"{correct_time + random.uniform(0.5, 2.5):.2f} minutes",
+            f"{correct_time - random.uniform(0.5, 1.5):.2f} minutes",
+            f"{correct_time + random.uniform(2.5, 5):.2f} minutes",
+            f"{correct_time * random.randint(2, 3):.2f} minutes"
         ],
-        "correct": "5 minutes"
+        "correct": f"{correct_time} minutes"
     }
+
+    # Shuffle the options
     random.shuffle(question["options"])
     return question
 
