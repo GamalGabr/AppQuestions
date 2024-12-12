@@ -74,41 +74,19 @@ def generate_percentage_question():
     random.shuffle(question["options"])
     return question
 
-# Generate a new type of question about average calculations
-def generate_average_calculation_question():
-    numbers = [random.randint(1, 10) for _ in range(3)]
-    average = sum(numbers) / len(numbers)
-
+# Generate a new type of question about machine efficiency
+def generate_machine_efficiency_question():
     question = {
         "id": f"{random.randint(0, 100)}",
-        "question": f"The numbers are {numbers}. What is their average?",
+        "question": "If it takes 5 machines 5 minutes to make 5 crackers, how long would it take 100 machines to make 100 crackers?",
         "options": [
-            round(average, 2),
-            round(average + random.uniform(1, 2), 2),
-            round(average - random.uniform(1, 2), 2),
-            round(average + random.uniform(2, 3), 2)
+            "1 minute",
+            "5 minutes",
+            "10 minutes",
+            "15 minutes",
+            "100 minutes"
         ],
-        "correct": round(average, 2)
-    }
-    random.shuffle(question["options"])
-    return question
-
-# Generate a question about ratios
-def generate_ratio_question():
-    total = random.randint(20, 50)
-    part = random.randint(1, total - 1)
-    ratio = f"{part}:{total}"
-
-    question = {
-        "id": f"{random.randint(0, 100)}",
-        "question": f"In a group of {total} students, {part} are boys. What is the ratio of boys to the total number of students?",
-        "options": [
-            ratio,
-            f"{part + random.randint(1, 5)}:{total}",
-            f"{part}:{total + random.randint(1, 5)}",
-            f"{part + random.randint(5, 10)}:{total + random.randint(5, 10)}"
-        ],
-        "correct": ratio
+        "correct": "5 minutes"
     }
     random.shuffle(question["options"])
     return question
@@ -125,9 +103,7 @@ def update_questions_file():
     for _ in range(2):
         questions.append(generate_absolute_vs_relative_change_question())
     for _ in range(2):
-        questions.append(generate_average_calculation_question())
-    for _ in range(2):
-        questions.append(generate_ratio_question())
+        questions.append(generate_machine_efficiency_question())
 
     # Clone the target repository
     if not os.path.exists(LOCAL_TARGET_REPO_PATH):
@@ -148,4 +124,3 @@ def update_questions_file():
 
 if __name__ == "__main__":
     update_questions_file()
-
