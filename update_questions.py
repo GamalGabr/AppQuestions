@@ -1,12 +1,16 @@
 import json
 import random
+import os
+import subprocess
+
+TARGET_REPO_URL = "https://github.com/GamalGabr/Target-Questions-Repo.git"
+LOCAL_TARGET_REPO_PATH = "Target-Questions-Repo"  # Path to clone the target repo
+BRANCH_NAME = "main"  # Target branch name
 
 def generate_venn_diagram_question():
-    """
-    Generates a random Venn diagram question about the relationships between people liking physics and maths.
-    """
+    # (Question generation logic remains the same)
     total_population = 10
-    physics_and_maths = random.randint(1, total_population - 1)  # People liking both
+    physics_and_maths = random.randint(1, total_population - 1)
     physics_only = random.randint(0, total_population - physics_and_maths)
     maths_only = total_population - physics_and_maths - physics_only
 
@@ -23,22 +27,17 @@ def generate_venn_diagram_question():
         ],
         "correct": physics_only
     }
-    random.shuffle(question["options"])  # Shuffle the options
+    random.shuffle(question["options"])
     return question
 
 def generate_absolute_vs_relative_change_question():
-    """
-    Generates a random question comparing absolute and relative percentage changes.
-    Includes both increases and decreases to teach the importance of context.
-    """
-    initial_value = random.randint(1, 10)  # Random initial chance
-    change = random.choice([-1, 1]) * random.randint(1, 5)  # Random change (positive or negative)
-    new_value = max(1, initial_value + change)  # Ensure new value is at least 1
-
+    # (Question generation logic remains the same)
+    initial_value = random.randint(1, 10)
+    change = random.choice([-1, 1]) * random.randint(1, 5)
+    new_value = max(1, initial_value + change)
     absolute_change = new_value - initial_value
     relative_change = round((absolute_change / initial_value) * 100, 0)
 
-    # Format the question to explain the difference
     question = {
         "id": f"{random.randint(0, 100)}",
         "question": f"An athlete's chances of qualifying for the Highland Games changed from {initial_value}% to "
@@ -51,13 +50,11 @@ def generate_absolute_vs_relative_change_question():
         ],
         "correct": f"Absolute: {abs(absolute_change)}%, Relative: {abs(relative_change)}%"
     }
-    random.shuffle(question["options"])  # Shuffle the options for randomness
+    random.shuffle(question["options"])
     return question
 
 def generate_percentage_question():
-    """
-    Generates a random percentage change question involving values between 1 and 10.
-    """
+    # (Question generation logic remains the same)
     number1 = random.randint(1, 10)
     number2 = random.randint(1, 10)
     percentage_change = round(((number2 - number1) / number1) * 100, 0)
@@ -73,13 +70,11 @@ def generate_percentage_question():
         ],
         "correct": percentage_change
     }
-    random.shuffle(question["options"])  # Shuffle the options
+    random.shuffle(question["options"])
     return question
 
 def generate_price_change_question():
-    """
-    Generates a random percentage change question for price differences.
-    """
+    # (Question generation logic remains the same)
     initial_price = random.randint(1, 10)
     new_price = random.randint(1, 10)
     percentage_change = round(((new_price - initial_price) / initial_price) * 100, 0)
@@ -96,16 +91,13 @@ def generate_price_change_question():
         ],
         "correct": percentage_change
     }
-    random.shuffle(question["options"])  # Shuffle the options
+    random.shuffle(question["options"])
     return question
 
 def update_questions_file():
-    """
-    Updates the questions.json file with 10 new questions.
-    """
+    # Step 1: Generate Questions
     questions = []
 
-    # Add different types of questions
     for _ in range(4):
         questions.append(generate_venn_diagram_question())
     for _ in range(3):
@@ -114,9 +106,23 @@ def update_questions_file():
         questions.append(generate_absolute_vs_relative_change_question())
     questions.append(generate_price_change_question())
 
-    with open("questions.json", "w") as file:
+    # Step 2: Clone Target Repository if Not Already Cloned
+    if not os.path.exists(LOCAL_TARGET_REPO_PATH):
+        print(f"Cloning target repository: {TARGET_REPO_URL}")
+        subprocess.run(["git", "clone", TARGET_REPO_URL, LOCAL_TARGET_REPO_PATH], check=True)
+
+    # Step 3: Write Questions File to Target Repository
+    questions_file_path = os.path.join(LOCAL_TARGET_REPO_PATH, "questions.json")
+    with open(questions_file_path, "w") as file:
         json.dump(questions, file, indent=4)
-    print("questions.json updated successfully with 10 questions.")
+    print(f"questions.json updated successfully in {LOCAL_TARGET_REPO_PATH}")
+
+    # Step 4: Commit and Push Changes to Target Repository
+    os.chdir(LOCAL_TARGET_REPO_PATH)  # Change to target repo directory
+    subprocess.run(["git", "add", "questions.json"], check=True)
+    subprocess.run(["git", "commit", "-m", "Update questions.json with new questions"], check=True)
+    subprocess.run(["git", "push", "origin", BRANCH_NAME], check=True)
+    print("Changes pushed to target repository.")
 
 if __name__ == "__main__":
     update_questions_file()
