@@ -8,6 +8,7 @@ TARGET_REPO_URL = f"https://x-access-token:{os.getenv('TARGET_REPO_TOKEN')}@gith
 LOCAL_TARGET_REPO_PATH = "Target-Questions-Repo"
 BRANCH_NAME = "main"
 
+# Existing Venn diagram question generator
 def generate_venn_diagram_question():
     total_population = 10
     physics_and_maths = random.randint(1, total_population - 1)
@@ -30,12 +31,103 @@ def generate_venn_diagram_question():
     random.shuffle(question["options"])
     return question
 
+# Generate absolute vs relative change question
+def generate_absolute_vs_relative_change_question():
+    initial_value = random.randint(1, 10)
+    change = random.choice([-1, 1]) * random.randint(1, 5)
+    new_value = max(1, initial_value + change)
+    absolute_change = new_value - initial_value
+    relative_change = round((absolute_change / initial_value) * 100, 0)
+
+    question = {
+        "id": f"{random.randint(0, 100)}",
+        "question": f"An athlete's chances of qualifying for the Highland Games changed from {initial_value}% to "
+                    f"{new_value}%. What is the absolute percentage change and the relative percentage change?",
+        "options": [
+            f"Absolute: {abs(absolute_change)}%, Relative: {abs(relative_change)}%",
+            f"Absolute: {abs(absolute_change) + random.randint(1, 3)}%, Relative: {abs(relative_change) + random.randint(10, 20)}%",
+            f"Absolute: {abs(absolute_change) - random.randint(1, 2)}%, Relative: {abs(relative_change) - random.randint(5, 10)}%",
+            f"Absolute: {abs(absolute_change) + random.randint(2, 3)}%, Relative: {abs(relative_change) + random.randint(15, 30)}%"
+        ],
+        "correct": f"Absolute: {abs(absolute_change)}%, Relative: {abs(relative_change)}%"
+    }
+    random.shuffle(question["options"])
+    return question
+
+# Generate a question about percentage change
+def generate_percentage_question():
+    number1 = random.randint(1, 10)
+    number2 = random.randint(1, 10)
+    percentage_change = round(((number2 - number1) / number1) * 100, 0)
+
+    question = {
+        "id": f"{random.randint(0, 100)}",
+        "question": f"The initial value was {number1}, and the new value is {number2}. What is the percentage change?",
+        "options": [
+            percentage_change,
+            percentage_change + random.randint(1, 5),
+            percentage_change - random.randint(1, 5),
+            percentage_change + random.randint(5, 10)
+        ],
+        "correct": percentage_change
+    }
+    random.shuffle(question["options"])
+    return question
+
+# Generate a new type of question about average calculations
+def generate_average_calculation_question():
+    numbers = [random.randint(1, 10) for _ in range(3)]
+    average = sum(numbers) / len(numbers)
+
+    question = {
+        "id": f"{random.randint(0, 100)}",
+        "question": f"The numbers are {numbers}. What is their average?",
+        "options": [
+            round(average, 2),
+            round(average + random.uniform(1, 2), 2),
+            round(average - random.uniform(1, 2), 2),
+            round(average + random.uniform(2, 3), 2)
+        ],
+        "correct": round(average, 2)
+    }
+    random.shuffle(question["options"])
+    return question
+
+# Generate a question about ratios
+def generate_ratio_question():
+    total = random.randint(20, 50)
+    part = random.randint(1, total - 1)
+    ratio = f"{part}:{total}"
+
+    question = {
+        "id": f"{random.randint(0, 100)}",
+        "question": f"In a group of {total} students, {part} are boys. What is the ratio of boys to the total number of students?",
+        "options": [
+            ratio,
+            f"{part + random.randint(1, 5)}:{total}",
+            f"{part}:{total + random.randint(1, 5)}",
+            f"{part + random.randint(5, 10)}:{total + random.randint(5, 10)}"
+        ],
+        "correct": ratio
+    }
+    random.shuffle(question["options"])
+    return question
+
+# Function to update the questions.json file
 def update_questions_file():
     questions = []
 
-    # Generate questions
+    # Generate a wider range of questions
     for _ in range(4):
         questions.append(generate_venn_diagram_question())
+    for _ in range(3):
+        questions.append(generate_percentage_question())
+    for _ in range(2):
+        questions.append(generate_absolute_vs_relative_change_question())
+    for _ in range(2):
+        questions.append(generate_average_calculation_question())
+    for _ in range(2):
+        questions.append(generate_ratio_question())
 
     # Clone the target repository
     if not os.path.exists(LOCAL_TARGET_REPO_PATH):
@@ -56,3 +148,4 @@ def update_questions_file():
 
 if __name__ == "__main__":
     update_questions_file()
+
