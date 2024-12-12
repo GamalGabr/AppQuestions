@@ -3,7 +3,8 @@ import random
 import os
 import subprocess
 
-TARGET_REPO_URL = f"https://x-access-token:{os.getenv('GITHUB_TOKEN')}@github.com/GamalGabr/Target-Questions-Repo.git"
+# Updated to use `TARGET_REPO_TOKEN` instead of `GITHUB_TOKEN` for authentication
+TARGET_REPO_URL = f"https://x-access-token:{os.getenv('TARGET_REPO_TOKEN')}@github.com/GamalGabr/Target-Questions-Repo.git"
 LOCAL_TARGET_REPO_PATH = "Target-Questions-Repo"
 BRANCH_NAME = "main"
 
