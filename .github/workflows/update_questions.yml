@@ -31,7 +31,7 @@ jobs:
     - name: Checkout Target Repository
       uses: actions/checkout@v3
       with:
-        repository: target-username/target-repository  # Replace with your target repo details
+        repository: GamalGabr/Target-Questions-Repo  # Replace with your target repo details
         token: ${{ secrets.TARGET_REPO_TOKEN }}       # Token for authentication
         ref: main                                     # Branch to push to
 
